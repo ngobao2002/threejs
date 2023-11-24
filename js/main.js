@@ -19,6 +19,13 @@
 	cube.rotation.set(0.4, 0.2, 0);
 	scene.add(cube);
 
+	var boxGeometry1 = new THREE.BoxGeometry(10, 10, 10);
+	var basicMaterial1 = new THREE.MeshBasicMaterial({color: 0x0095DD});
+	var cube1 = new THREE.Mesh(boxGeometry1, basicMaterial1);
+	cube.position.x = -30;
+	cube.rotation.set(0.2, 0.2, 0);
+	scene.add(cube1);
+
 	var torusGeometry = new THREE.TorusGeometry(7, 1, 6, 12);
 	var phongMaterial = new THREE.MeshPhongMaterial({color: 0xFF9500});
 	var torus = new THREE.Mesh(torusGeometry, phongMaterial);
@@ -39,6 +46,7 @@
 		t += 0.01;
 		requestAnimationFrame(render);
 		cube.rotation.y += 0.01;
+		cube1.rotation.y += 0.4;
 		torus.scale.y = Math.abs(Math.sin(t));
 		dodecahedron.position.y = -7*Math.sin(t*2);
 		renderer.render(scene, camera);
