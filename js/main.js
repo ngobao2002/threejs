@@ -1,5 +1,3 @@
-import * as THREE from 'three';
-
 	var WIDTH = window.innerWidth;
 	var HEIGHT = window.innerHeight;
 
